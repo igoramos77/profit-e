@@ -6,23 +6,17 @@ import ContentGrid  from "../../components/ContentGrid";
 import HeaderInfo  from "../../components/HeaderInfo";
 
 import Loader from '../../components/Loader';
-import Icon from '../../components/Icon';
 import Footer from '../../components/Footer';
 
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
-import TinySlider from 'tiny-slider-react';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 import CategoryMenu from '../../components/CategoryMenu';
 
-import hardware from '../../assets/categories/HARDWARE.png';
-import brinquedos from '../../assets/categories/BRINQUEDOS.png';
-import celular from '../../assets/categories/CELULAR-TELEFONE.png';
-import tv from '../../assets/categories/TV.png';
-import computadores from '../../assets/categories/COMPUTADORES.png';
-import perifericos from '../../assets/categories/PERIFERICOS.png';
+import imgSlider1 from '../../assets/slider/1.png';
+import imgSlider2 from '../../assets/slider/2.png';
 
-import { Container, CategoriesGrid } from './styles';
+import { Container, CategoriesGrid, SliderContent, Slider1 } from './styles';
 
 interface ICategoriesProps {
   id: number;
@@ -58,7 +52,31 @@ const Dashboard: React.FC = () => {
 
   return(
     <Container>
-      <HeaderInfo supTitle="Página Inicial" title="Departamentos" margin="2rem 0 1rem 0" to="/pagina2" />
+      <SliderContent>
+        <Splide options={{rewind: true,}}>
+          <SplideSlide>
+            <Slider1>
+              <div>
+                <h1>Nossa especialidade: <br />experiência de compra.</h1>
+              </div>
+              <div>
+                <img src={imgSlider1} alt="Slider 1" />
+              </div>
+            </Slider1>
+          </SplideSlide>
+          <SplideSlide>
+            <Slider1>
+              <div>
+                <img src={imgSlider2} alt="Slider 1" />
+              </div>
+              <div>
+                <h1>Nike Air Force 1: <br />O tênis mais vendido do ano.</h1>
+              </div>
+            </Slider1>
+          </SplideSlide>
+        </Splide>
+      </SliderContent>
+
 
       <CategoriesGrid>
         {loading && <Loader isFixed={false} zIndex={99999999} />}

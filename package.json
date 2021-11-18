@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ramonak/react-progress-bar": "^2.1.3",
+    "@splidejs/react-splide": "splidejs/react-splide",
     "@types/react-input-mask": "^3.0.1",
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",

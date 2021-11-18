@@ -10,7 +10,7 @@ import styled from 'styled-components';
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 140px auto;
+  grid-template-rows: 80px auto;
   grid-template-areas:
   'MH'
   'CT';
@@ -19,7 +19,7 @@ export const Grid = styled.div`
    /* TABLET */
    @media (max-width: 768px) {
     grid-template-columns: auto;
-    grid-template-rows: 140px auto;
+    grid-template-rows: 80px auto;
     grid-template-areas:
     'MH'
     'CT';

@@ -56,13 +56,6 @@ const MainHeader: React.FC = () => {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
-  const { toggleTheme } = useTheme();
-
-
-  const handleChangeTheme = () => {
-    toggleTheme();
-  }
-
   return (
     <>
       <Container>
