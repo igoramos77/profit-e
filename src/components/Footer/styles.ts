@@ -13,13 +13,18 @@ export const Container = styled.div`
     justify-content: space-between;
     flex-direction: row;
     gap: 1rem;
-
-    display: flex;
     align-items: end;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     max-width: 1320px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+    }
 
 
     > div {

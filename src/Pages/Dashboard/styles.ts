@@ -8,6 +8,7 @@ export const Container = styled.div`
     background: #ff9f1c !important;
     opacity: 1;
   }
+
 `;
 
 export const ProductsGrid = styled.div`
@@ -52,6 +53,7 @@ export const Slider1 = styled.div`
       height: 430px;
       object-fit: cover;
       object-position: 0 0;
+      width: 100%;
     }
   }
 

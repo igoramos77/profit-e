@@ -8,17 +8,22 @@ import { Container, OffBadge } from './styles';
 import { FiShoppingCart } from "react-icons/fi";
 import Button from '../Button';
 
-interface IProductCardProps {
+
+interface IProdutcsProps {
+  id?: number;
   name: string;
+  image: string;
+  oldPrice: number;
+  price: number;
   description?: string;
-  image_url: string;
-  created_at?: string;
-  update_at?: string;
-  unity_value: number;
   off?: boolean;
+  instalments: {
+    count: number;
+    value: number;
+  }
 }
 
-const ProductCard: React.FC<IProductCardProps> = ({name, off, image_url, created_at, update_at, unity_value}) => {
+const ProductCard: React.FC<IProdutcsProps> = ({name, off, image, oldPrice, price, description, instalments}) => {
 
   const ratingChanged = (newRating: any) => {
     console.log(newRating)
@@ -27,12 +32,12 @@ const ProductCard: React.FC<IProductCardProps> = ({name, off, image_url, created
   return (
     <Container>
       {off && <OffBadge />}
-      <img src={image_url} alt={name} />
+      <img src={image} alt={name} />
       <h3> {truncateString(name, 67)} </h3>
       <ReactStars count={5} value={Math.floor(Math.random() * 6)} onChange={ratingChanged} size={24} color1="#ccc" color2="#ffd700" />
-      <main>de R$ 299,00</main>
-      <h4>por {unity_value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h4>
-      <p>ou em 3x de R$ 133,00</p>
+      <main>de {oldPrice.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</main>
+      <h4>por {price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h4>
+      <p>ou em {instalments.count}x de {instalments.value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
       <Button color="success"> <FiShoppingCart size={20} /> Comprar</Button>
     </Container>
   );

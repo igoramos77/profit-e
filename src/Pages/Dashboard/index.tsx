@@ -17,20 +17,17 @@ import { Container, ProductsGrid, SliderContent, Slider1 } from './styles';
 import CustomTitles from '../../components/CustomTitles';
 
 interface IProdutcsProps {
-  id: number;
+  id?: number;
   name: string;
-  description: string;
-  image_url: string;
-  created_at: string;
-  update_at: string;
-  unity_value: number;
-  categoryList?: {
-    id: number;
-    image_url: string;
-    name: string;
-    slug: string;
-    description: string;
-  }[];
+  image: string;
+  oldPrice: number;
+  price: number;
+  description?: string;
+  off: boolean;
+  instalments: {
+    count: number;
+    value: number;
+  }
 }
 
 const Dashboard: React.FC = () => {
@@ -59,7 +56,14 @@ const Dashboard: React.FC = () => {
   return(
     <Container>
       <SliderContent>
-        <Splide options={{rewind: true, type: 'loop', perPage: 1, perMove: 1,}}>
+        <Splide options={
+          {
+            rewind: true,
+            type: 'loop',
+            perPage: 1,
+            perMove: 1,
+          }
+        }>
           <SplideSlide>
             <Slider1>
               <div>
@@ -97,10 +101,12 @@ const Dashboard: React.FC = () => {
           {products?.map((product, index) => (
           <SplideSlide key={index}>
             <ProductCard
-            off={index % 2 === 0 ? true : false}
-            name={product.name}
-            unity_value={product.unity_value}
-            image_url={product.image_url}
+              off={index % 2 === 0 ? true : false}
+              name={product.name}
+              image={product.image}
+              oldPrice={product.oldPrice}
+              price={product.price}
+              instalments={product.instalments}
             />
           </SplideSlide>
           ))}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiHeadphones, FiMail, FiShoppingCart } from 'react-icons/fi';
+import { FiHeadphones, FiMail } from 'react-icons/fi';
 import Button from '../Button';
 
 import CustomTitles from '../CustomTitles';
@@ -39,9 +39,9 @@ const Footer: React.FC = () => {
           <Button color="warning"> <FiMail size={20} /> ENTRE EM CONTATO</Button>
           <Button color="warning"> <FiHeadphones size={20} /> FALE COM O NOSSO <br /> CONSULTOR ONLINE</Button>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <footer style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1rem' }}>
           <img src={footerLogo} alt="Logo" />
-        </div>
+        </footer>
       </main>
     </Container>
   );
