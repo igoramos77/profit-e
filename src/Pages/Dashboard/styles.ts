@@ -13,7 +13,9 @@ export const Container = styled.div`
 export const ProductsGrid = styled.div`
   position: relative;
   width: 100%;
+  margin-bottom: 3rem;
 `;
+
 export const SliderContent = styled.div`
   position: relative;
   width: 100%;

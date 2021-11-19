@@ -26,13 +26,22 @@ export const Container = styled.div`
       border: 2px solid red;
       width: 100%;
 
-      > h2 {
-        color: #fff;
+      > main {
+        display: flex;
+        justify-content: space-between;
+
+        > div {
+
+          > h2 {
+            color: #fff;
+          }
+
+          > p {
+            color: #fff;
+          }
+        }
       }
 
-      > p {
-        color: #fff;
-      }
     }
   }
 

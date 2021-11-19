@@ -53,7 +53,7 @@ const buttonColorVariations = {
     background: ${props => props.theme.colors.success};
     color: #fff;
     &:hover {
-      background: #099d72;
+      background: #2EC4B6;
     }
   `,
   error: css`
@@ -86,14 +86,17 @@ const buttonColorVariations = {
 
 export const Container = styled.button<ContainerProps>`
   border: none;
-  border-radius: 10px;
-  padding: 1.15rem .4rem;
+  border-radius: 5px;
   font-weight: bold;
   align-items: center;
-  box-shadow: 4px 7px 12px 0 rgba(97,93,250,.2);
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: all .3s ease-in-out;
   text-transform: uppercase;
+  padding: .8rem 1.35rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
   &:disabled {
     cursor: not-allowed;

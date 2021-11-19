@@ -12,7 +12,7 @@ const light = {
     darkGray: '#293249',
 
     danger: '',
-    success: '#03bb85',
+    success: '#2EC4B6',
     info: '#5753e4',
     warning: '#ff6961',
 

@@ -21,8 +21,21 @@ export const Container = styled.div`
     background: #F2F2F2;
   }
 
+  > button {
+    padding: .7rem 1.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  > img {
+    margin-bottom: 1.5rem;
+  }
+
   > h3 {
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
     margin-top: 0.5rem;
@@ -55,4 +68,25 @@ export const Container = styled.div`
     color: rgb(127, 133, 141);
     margin-top: 5px;
   }
-`;
+  `;
+
+  export const OffBadge = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 100px 0;
+    border-color: transparent #FF9F1C transparent transparent;
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+
+    &::before {
+      content: "OFF";
+      position: absolute;
+      top: 22px;
+      left: 53px;
+    }
+  `;

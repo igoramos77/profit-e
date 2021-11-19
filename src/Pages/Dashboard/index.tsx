@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => {
   return(
     <Container>
       <SliderContent>
-        <Splide options={{rewind: true,}}>
+        <Splide options={{rewind: true, type: 'loop', perPage: 1, perMove: 1,}}>
           <SplideSlide>
             <Slider1>
               <div>
@@ -84,7 +84,6 @@ const Dashboard: React.FC = () => {
       </SliderContent>
       <CustomTitles size={22} borderColor="#FF9F1C" borderBottomWidth="50px" fontWeight={700} margin="2rem 0">Produtos</CustomTitles>
       <ProductsGrid>
-
         <Splide options={
           {
             rewind: true,
@@ -98,6 +97,7 @@ const Dashboard: React.FC = () => {
           {products?.map((product, index) => (
           <SplideSlide key={index}>
             <ProductCard
+            off={index % 2 === 0 ? true : false}
             name={product.name}
             unity_value={product.unity_value}
             image_url={product.image_url}
