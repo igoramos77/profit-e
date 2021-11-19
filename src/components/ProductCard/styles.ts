@@ -33,7 +33,7 @@ export const Container = styled.div`
   > h4 {
     width: 100%;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     color: #2EC4B6;
   }
 
@@ -45,6 +45,7 @@ export const Container = styled.div`
     font-size: 12px;
     color: rgb(127, 133, 141);
     margin: 5px 0;
+    text-decoration: line-through;
   }
 
   > p {

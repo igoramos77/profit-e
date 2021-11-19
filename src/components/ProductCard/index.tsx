@@ -28,7 +28,7 @@ const ProductCard: React.FC<IProductCardProps> = ({name, description, image_url,
       <h3> {truncateString(name, 67)} </h3>
       <ReactStars count={5} value={1} onChange={ratingChanged} size={24} color1="#ccc" color2="#ffd700" />
       <main>de R$ 299,00</main>
-      <h4>{unity_value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h4>
+      <h4>por {unity_value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h4>
       <p>ou em 3x de R$ 133,00</p>
     </Container>
   );
