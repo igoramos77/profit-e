@@ -1,1 +1,1 @@
-﻿# REACT TYPESCRIPT TEMPLATE + ESSENTIAL LIBS 🎉
+﻿# Profit-e (Frontend) 🛒👟
