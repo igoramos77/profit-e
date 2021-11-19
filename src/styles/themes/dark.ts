@@ -14,7 +14,7 @@ const dark = {
     danger: '',
     success: '#2EC4B6',
     info: '#5753e4',
-    warning: '#ff6961',
+    warning: '#FF9F1C',
 
     textColor: '#ffffff',
     secundaryTextColor: '#9aa4bf',

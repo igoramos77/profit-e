@@ -1,15 +1,19 @@
 import React from 'react';
+import { FiHeadphones, FiMail, FiShoppingCart } from 'react-icons/fi';
+import Button from '../Button';
 
 import CustomTitles from '../CustomTitles';
 
 import { Container } from './styles';
+
+import footerLogo from '../../assets/footer-logo.svg';
 
 const Footer: React.FC = () => {
   return (
     <Container>
       <main>
         <div>
-          <CustomTitles size={22} borderColor="#FF9F1C" color="#fff" borderBottomWidth="50px" fontWeight={700} margin="0 0 2rem 0">Localização</CustomTitles>
+          <CustomTitles size={22} borderColor="#FF9F1C" color="#fff" borderBottomWidth="50px" fontWeight={700} margin="0 0 3rem 0">Localização</CustomTitles>
           <main>
             <div>
               <h2>São Paulo</h2>
@@ -31,11 +35,12 @@ const Footer: React.FC = () => {
             </div>
           </main>
         </div>
-        <div>
-          <h2>aaaaa</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+          <Button color="warning"> <FiMail size={20} /> ENTRE EM CONTATO</Button>
+          <Button color="warning"> <FiHeadphones size={20} /> FALE COM O NOSSO <br /> CONSULTOR ONLINE</Button>
         </div>
-        <div>
-          <h2>aaaaa</h2>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <img src={footerLogo} alt="Logo" />
         </div>
       </main>
     </Container>

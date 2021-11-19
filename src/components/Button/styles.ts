@@ -5,6 +5,7 @@ interface ContainerProps {
     | 'primary'
     | 'secondary'
     | 'tertiary'
+    | 'warning'
     | 'info'
     | 'success'
     | 'error'
@@ -87,7 +88,7 @@ const buttonColorVariations = {
 export const Container = styled.button<ContainerProps>`
   border: none;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: 500;
   align-items: center;
   font-size: 1.2rem;
   transition: all .3s ease-in-out;

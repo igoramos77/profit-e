@@ -7,6 +7,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     | 'primary'
     | 'secondary'
     | 'tertiary'
+    | 'warning'
     | 'info'
     | 'success'
     | 'error'
