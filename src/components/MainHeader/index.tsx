@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { useTheme } from '../../hooks/theme';
-
-import api from '../../services/api';
-
-import MenuTrigger from '../MenuTrigger';
 import Input from '../Input';
 
 import { FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
-
-
-import menuLinks from '../../utils/menuLinks';
 
 import logo from '../../assets/logo.svg';
 
@@ -22,10 +14,6 @@ import gbFlag from '../../assets/flags/gb.svg';
 import {
   Container,
   HeaderActions,
-  ArrowBack,
-  AsideMenuMobile,
-  Menu,
-  Backdrop,
   MainContent,
   SearchContent,
   AccontContent
@@ -49,18 +37,11 @@ export interface IStatsBoxSmallProps {
 }
 
 const MainHeader: React.FC = () => {
-  const location = useLocation();
-  const localtionSplited = location.pathname.split('/')[1];
-
-  // SideBar Menu Open
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>
       <Container>
         <MainContent>
-
           <HeaderActions>
             <img src={logo} alt="Logo" />
           </HeaderActions>
@@ -91,27 +72,6 @@ const MainHeader: React.FC = () => {
 
 
       </Container>
-
-      <AsideMenuMobile className={sidebar ? 'sidebar active' : 'sidebar'}>
-        <ArrowBack onClick={showSidebar}>
-          <span className="icon-icon-back-arrow"></span>
-        </ArrowBack>
-        <div>
-          <Link to="/perfil" onClick={showSidebar}>Olá, Igor! <br /> <span>Mensgem de boas vindas!</span></Link>
-        </div>
-        <Menu>
-          <h4>Menu</h4>
-          {menuLinks.map((item, index) => (
-            <div key={index} className={localtionSplited === item.location || (localtionSplited === '' && index === 0)  ? 'active' : ''}>
-              <Link data-tooltip={item.tooltip} to={'/' + item.location} onClick={showSidebar} >
-                <span className={item.icon}></span>
-                {item.tooltip}
-              </Link>
-            </div>
-          ))}
-        </Menu>
-      </AsideMenuMobile>
-      <Backdrop className={sidebar ? 'active' : 'no-active'} onClick={showSidebar} />
     </>
   );
 }

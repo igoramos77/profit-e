@@ -11,6 +11,11 @@ export const Container = styled.div`
   width: 100%;
   height: 80px;
   z-index: 99999999;
+
+  /* TABLET */
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const MainContent = styled.div`
@@ -35,159 +40,24 @@ export const HeaderActions = styled.div`
   }
 `;
 
-export const ArrowBack = styled.button`
-  position: absolute;
-  height: 15px;
-  width: 15px;
-  font-size: 14px;
-  top: 1.2rem;
-  right: 1.2rem;
-  border: none;
-  background: none;
-  color: ${props => props.theme.colors.textColor};
-`;
-
-export const AsideMenuMobile = styled.div`
-  background: ${props => props.theme.colors.bgBox};
-  width: 300px;
-  height: 100%;
-  overflow-y: scroll;
-  position: fixed;
-  z-index: 99999999999999;
-  padding: 2rem 1rem;
-  transition: .5s ease-in-out;
-  left: -300px;
-
-  &.sidebar.active {
-    left: 0;
-  }
-
-  &::-webkit-scrollbar {
-    visibility: hidden;
-    width: 4px;
-    height: 4px;
-  }
-
-  &:hover::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-    opacity: 1;
-    transition: all .3s ease-in-out;
-  }
-  &:hover::-webkit-scrollbar-thumb {
-    background: #cccccc80;
-    border-radius: 10px;
-  }
-  &:hover::-webkit-scrollbar-thumb:hover{
-
-  }
-  &:hover::-webkit-scrollbar-track{
-    border-radius: 10px;
-    box-shadow: inset 7px 10px 12px #cccccc10;
-  }
-
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-bottom: 1rem;
-
-    > a {
-      margin-left: .5rem;
-      color: ${props => props.theme.colors.textColor};
-      font-weight: 700;
-      line-height: 1;
-      text-decoration: none;
-
-      > span {
-        margin-top: 4px;
-        color: #8f91ac;
-        font-size: .75rem;
-        font-weight: 500;
-      }
-    }
-  }
-`;
-
-export const Backdrop = styled.div`
-  position: fixed;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  z-index: 99999999;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(110, 97, 198, .5);
-  visibility: hidden;
-  opacity: 0;
-  transition: all .3s ease-in-out;
-
-  &.active {
-    visibility: visible;
-    opacity: 1;
-    transition: all .3s ease-in-out;
-  }
-`;
-
-export const Menu = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  > h4 {
-    padding: 0 0 5px 7px;
-    color: #adafca;
-    font-size: .75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: left;
-    width: 100%;
-  }
-
-  > div {
-    margin: .25rem 0;
-    width: 100%;
-    padding: 12px 1rem;
-    display: flex;
-    align-items: center;
-
-    &.active {
-      border-radius: 12px;
-      color: ${props => props.theme.colors.white};
-      background: ${props => props.theme.colors.primary};
-      box-shadow: ${props => props.theme.colors.shadowBox};
-
-      > a, span {
-        color: #fff;
-      }
-    }
-
-    > a {
-      text-decoration: none;
-      transition: all .2s ease-in-out;
-      font-weight: 700;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      color: ${props =>props.theme.colors.textColor};
-
-      > span {
-        padding-right: 1.5rem;
-        font-size: 20px;
-        color: ${props =>props.theme.colors.primary};
-      }
-    }
-  }
-`;
-
 export const SearchContent = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 50%;
+
+  /* TABLET */
+  @media (max-width: 768px) {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    background: white;
+    top: 75px;
+    left: 0;
+    padding: 0 1rem 1rem 1rem;
+  }
+
 
   > input {
     width: 100%;
@@ -201,6 +71,9 @@ export const SearchContent = styled.div`
   > svg {
     position: absolute;
     right: 1rem;
+    background: #fff;
+    padding: 2px;
+    border-radius: 50%;
   }
 `;
 
@@ -214,6 +87,11 @@ export const AccontContent = styled.div`
     position: relative;
     display: flex;
     align-items: center;
+
+    /* TABLET */
+    @media (max-width: 768px) {
+    display: none;
+    }
 
     > span {
       display: flex;
@@ -263,6 +141,11 @@ export const AccontContent = styled.div`
     margin-left: 25px;
     padding-left: 20px;
     border-left: 1px solid #7A7A7A;
+
+    /* TABLET */
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     > img {
       margin: 0 4px;
