@@ -24,8 +24,7 @@ export const MainContent = styled.div`
 
 export const HeaderActions = styled.div`
   display: flex;
-  margin: 0 2rem;
-  text-align: center;
+  text-align: left;
 
   @media screen and (max-width: 680px) {
     margin: 0 1.5rem;

@@ -3,43 +3,49 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 
 import ContentGrid  from "../../components/ContentGrid";
-import HeaderInfo  from "../../components/HeaderInfo";
-
+import ProductCard from '../../components/ProductCard';
 import Loader from '../../components/Loader';
 import Footer from '../../components/Footer';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
-import CategoryMenu from '../../components/CategoryMenu';
-
 import imgSlider1 from '../../assets/slider/1.png';
 import imgSlider2 from '../../assets/slider/2.png';
 
-import { Container, CategoriesGrid, SliderContent, Slider1 } from './styles';
+import { Container, ProductsGrid, SliderContent, Slider1 } from './styles';
+import CustomTitles from '../../components/CustomTitles';
 
-interface ICategoriesProps {
+interface IProdutcsProps {
   id: number;
-  image_url: string;
   name: string;
   description: string;
-  administrator?: null;
+  image_url: string;
+  created_at: string;
+  update_at: string;
+  unity_value: number;
+  categoryList?: {
+    id: number;
+    image_url: string;
+    name: string;
+    slug: string;
+    description: string;
+  }[];
 }
-
 
 const Dashboard: React.FC = () => {
 
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<ICategoriesProps[]>();
+  const [products, setProducts] = useState<IProdutcsProps[]>();
 
   useEffect(() => {
     async function loadData() {
       try {
         setLoading(true);
-        const response = await api.get('/category/');
+        const response = await api.get('/product/');
 
         console.log(response.data);
-        setData(response.data);
+        setProducts(response.data);
       } catch (error) {
         console.log(error);
       } finally {
@@ -76,20 +82,30 @@ const Dashboard: React.FC = () => {
           </SplideSlide>
         </Splide>
       </SliderContent>
+      <CustomTitles size={22} borderColor="#FF9F1C" borderBottomWidth="50px" fontWeight={700} margin="2rem 0">Produtos</CustomTitles>
+      <ProductsGrid>
 
-
-      <CategoriesGrid>
-        {loading && <Loader isFixed={false} zIndex={99999999} />}
-        {data?.map((category, index) => (
-          <CategoryMenu key={index} category={category.name} to={category.name}>
-            <img src={category.image_url} alt={category.description} />
-          </CategoryMenu>
-        ))}
-      </CategoriesGrid>
-
-      <ContentGrid>
-        <Footer />
-      </ContentGrid>
+        <Splide options={
+          {
+            rewind: true,
+            perPage: 4,
+            type: 'loop',
+            perMove: 1,
+            gap: '1rem',
+            pagination: false,
+          }}>
+          {loading && <Loader isFixed={false} zIndex={99999999} />}
+          {products?.map((product, index) => (
+          <SplideSlide key={index}>
+            <ProductCard
+            name={product.name}
+            unity_value={product.unity_value}
+            image_url={product.image_url}
+            />
+          </SplideSlide>
+          ))}
+        </Splide>
+      </ProductsGrid>
     </Container>
   );
 }
